@@ -1,0 +1,17 @@
+<aside class="sidebar">
+  <div class="sidebar-banner">
+    <img src="/assets/sidebar-banner.png" alt="Technical Assessment" aria-hidden="true" />
+  </div>
+
+  <div class="sidebar-welcome" *ngIf="name">
+    Welcome {{ name }}
+  </div>
+
+  <nav class="sidebar-nav">
+    <a [routerLink]="'users'">Users</a>
+  </nav>
+
+  <div class="sidebar-actions">
+    <button type="button" (click)="logout()">Logout</button>
+  </div>
+</aside>

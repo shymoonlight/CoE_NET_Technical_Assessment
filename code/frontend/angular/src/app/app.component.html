@@ -1,0 +1,6 @@
+<div class="sidebar" *ngIf="isAuthenticated">
+    <app-sidebar />
+</div>
+<div class="content" [class.content--full]="!isAuthenticated">
+    <router-outlet />
+</div>

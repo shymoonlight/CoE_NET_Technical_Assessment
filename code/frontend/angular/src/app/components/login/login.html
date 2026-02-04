@@ -1,0 +1,22 @@
+<section class="login">
+  <h1>Sign in</h1>
+
+  <form class="login_form" [formGroup]="form" (ngSubmit)="submit()" autocomplete="on">
+    <div class="login_field">
+      <label for="username">username</label>
+      <input id="username" name="username" type="text" placeholder="your_username" formControlName="username" />
+      <small *ngIf="form.controls.username.invalid && form.controls.username.touched">Enter a valid username.</small>
+    </div>
+
+    <div class="login_field">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="••••••••" formControlName="password" />
+      <small *ngIf="form.controls.password.invalid && form.controls.password.touched">Password is required.</small>
+    </div>
+
+    <div class="login_actions">
+      <button type="submit" [disabled]="form.invalid || isSubmitting">Sign in</button>
+    </div>
+    <p class="login_error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</section>

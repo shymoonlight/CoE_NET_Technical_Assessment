@@ -1,0 +1,32 @@
+{
+  "browserslist": {
+    "production": [
+      "last 2 chrome version",
+      "last 2 firefox version"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version"
+    ]
+  },
+  "dependencies": {
+    "@types/react": "19.2.8",
+    "@types/react-dom": "19.2.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-router": "7.9.6"
+  },
+  "devDependencies": {
+    "parcel": "2.16.1",
+    "process": "0.11.10",
+    "typescript": "5.9.3"
+  },
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "type": "module",
+  "version": "2025.11.25",
+  "name": "ta-web-react"
+}

@@ -1,0 +1,86 @@
+<section class="users">
+  <h1>User Management</h1>
+
+  <div class="users__actions" *ngIf="canCreate() && !isCreating && !isEditing">
+    <button type="button" (click)="startCreate()">Create new user</button>
+  </div>
+
+  <form class="users__form" *ngIf="showForm" [formGroup]="form" (ngSubmit)="save()">
+    <div class="users__grid">
+      <div>
+        <label>Name</label>
+        <input type="text" formControlName="name" />
+        <small class="users__error" *ngIf="form.controls.name.invalid && form.controls.name.touched">
+          Name is required.
+        </small>
+      </div>
+      <div>
+        <label>Username</label>
+        <input type="text" formControlName="userName" />
+        <small class="users__error" *ngIf="form.controls.userName.invalid && form.controls.userName.touched">
+          Username is required.
+        </small>
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" formControlName="email" />
+        <small class="users__error" *ngIf="form.controls.email.invalid && form.controls.email.touched">
+          Email provided is not valid.
+        </small>
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+        <small class="users__error" *ngIf="form.controls.password.invalid && form.controls.password.touched">
+          Password is required.
+        </small>
+      </div>
+      <div>
+        <label>Role</label>
+        <select formControlName="role" [disabled]="isUserRole">
+          <option value="">Select role</option>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+        </select>
+        <small class="users__error" *ngIf="form.controls.role.invalid && form.controls.role.touched">
+          Role is required.
+        </small>
+      </div>
+    </div>
+
+    <div class="users__actions">
+      <button type="submit" [disabled]="form.invalid || isSubmitting || (!form.value.id && !canCreate())">Save</button>
+      <button type="button" (click)="resetForm()">Cancel</button>
+    </div>
+
+    <p *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+
+  <table class="users__table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Create Date</th>
+        <th>Last Update Date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.name }}</td>
+        <td>{{ u.userName }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.role }}</td>
+        <td>{{ u.createDate }}</td>
+        <td>{{ u.lastUpdateDate }}</td>
+        <td>
+          <button type="button" (click)="edit(u)" [disabled]="!canEdit(u)">Edit</button>
+          <button type="button" (click)="remove(u)" [disabled]="!canDelete(u)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

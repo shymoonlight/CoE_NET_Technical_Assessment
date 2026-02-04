@@ -1,0 +1,120 @@
+* {
+	box-sizing: border-box;
+}
+
+:host {
+	display: block;
+}
+
+.login {
+	width: 100%;
+	min-height: 94vh;
+	display: grid;
+	place-items: center;
+	align-content: center;
+	padding: 2.5rem 1.5rem;
+	background: radial-gradient(circle at top, #f4f7ff 0%, #eef2f9 45%, #e7ebf6 100%);
+}
+
+.login h1 {
+	margin: 0 0 1.5rem;
+	font-size: 2rem;
+	font-weight: 700;
+	color: #1b1f2a;
+	text-align: center;
+	letter-spacing: -0.02em;
+}
+
+.login_form {
+	width: min(420px, 100%);
+	background: #ffffff;
+	padding: 2rem;
+	border-radius: 16px;
+	box-shadow: 0 20px 45px rgba(19, 33, 68, 0.12);
+	display: grid;
+	gap: 1.25rem;
+}
+
+.login_field {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.login_field label {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #2d3345;
+	text-transform: capitalize;
+}
+
+.login_field input {
+	width: 100%;
+	padding: 0.85rem 1rem;
+	border-radius: 10px;
+	border: 1px solid #d7deea;
+	font-size: 1rem;
+	color: #1b1f2a;
+	background: #f9fbff;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.login_field input:focus {
+	outline: none;
+	border-color: #5b7cfa;
+	background: #ffffff;
+	box-shadow: 0 0 0 3px rgba(91, 124, 250, 0.2);
+}
+
+.login_field small {
+	color: #d14343;
+	font-size: 0.8rem;
+}
+
+.login_actions {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.login_actions button {
+	border: none;
+	padding: 0.85rem 1.75rem;
+	border-radius: 999px;
+	background: linear-gradient(135deg, #4a6cf7 0%, #6f8efc 100%);
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+	box-shadow: 0 10px 25px rgba(74, 108, 247, 0.3);
+}
+
+.login_actions button:hover:not(:disabled) {
+	transform: translateY(-1px);
+	box-shadow: 0 12px 30px rgba(74, 108, 247, 0.35);
+}
+
+.login_actions button:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+	box-shadow: none;
+}
+
+.login_error {
+	margin: 0;
+	padding: 0.75rem 1rem;
+	border-radius: 10px;
+	background: rgba(209, 67, 67, 0.1);
+	color: #b33434;
+	font-size: 0.9rem;
+	border: 1px solid rgba(209, 67, 67, 0.2);
+}
+
+@media (max-width: 480px) {
+	.login_form {
+		padding: 1.5rem;
+	}
+
+	.login h1 {
+		font-size: 1.7rem;
+	}
+}

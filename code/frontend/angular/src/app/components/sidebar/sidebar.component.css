@@ -1,0 +1,101 @@
+:host {
+  display: block;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  color: #fff;
+  max-height: 97vh;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.35);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.sidebar-banner {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+}
+
+/* Banner image */
+.sidebar-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.sidebar-welcome {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.sidebar a,
+.sidebar button {
+  padding: 10px 14px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateX(2px);
+}
+
+.sidebar a:focus-visible,
+.sidebar button:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.sidebar-actions {
+  margin-top: auto;
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar button {
+  cursor: pointer;
+}
+
+.sidebar button:last-child {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fecaca;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.sidebar button:last-child:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fff;
+}
