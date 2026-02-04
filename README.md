@@ -17,14 +17,16 @@
 **Running steps** 🚀  
 
 - **Backend**
-- go to`code/backend` 
-- execute commands:
-- dotnet clean
-- dotnet build
-- dotnet run
+``` 
+pushd code/backend/
+dotnet clean
+dotnet build
+dotnet run --project TA-API/TA-API.csproj
+``` 
 
 - **Frontend**
-- go to`code/frontend/angular` 
-- execute commands:
-- npm install
-- npm start
+``` 
+pushd code/frontend/angular
+npm install
+npm start
+```
